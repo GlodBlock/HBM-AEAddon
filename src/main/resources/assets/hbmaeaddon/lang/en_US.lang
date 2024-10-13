@@ -1,0 +1,7 @@
+itemGroup.hbmaeaddon=HBM-AEAddon
+
+tile.hbmaeaddon.hbm_fluid_exposer.name=ME HBM-Fluid Export
+tile.hbmaeaddon.hbm_fluid_acceptor.name=ME HBM-Fluid Import
+
+gui.hbmaeaddon.hbm_fluid_exposer=ME HBM-Fluid Export Port
+gui.hbmaeaddon.stored_fluid=Stored Fluid

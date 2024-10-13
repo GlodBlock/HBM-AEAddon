@@ -1,0 +1,7 @@
+itemGroup.hbmaeaddon=HBM-AEAddon
+
+tile.hbmaeaddon.hbm_fluid_exposer.name=ME-HBM流体输出端口
+tile.hbmaeaddon.hbm_fluid_acceptor.name=ME-HBM流体输入端口
+
+gui.hbmaeaddon.hbm_fluid_exposer=ME-HBM流体输出端口
+gui.hbmaeaddon.stored_fluid=存储的流体

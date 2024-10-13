@@ -1,0 +1,14 @@
+[
+  {
+    "modid": "hbmaeaddon",
+    "name": "HBM-AEAddon",
+    "description": "AE Addon for HBM",
+    "version": "${modVersion}",
+    "mcversion": "${minecraftVersion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["GlodBlock"],
+    "credits":"",
+    "screenshots": []
+  }
+]
