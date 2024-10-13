@@ -1,7 +1,9 @@
 package com.glodblock.github.hbmaeaddon.client.gui;
 
+import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import com.glodblock.github.hbmaeaddon.HBMAEAddon;
@@ -10,6 +12,9 @@ import com.glodblock.github.hbmaeaddon.client.gui.slot.HBMSlot;
 import com.glodblock.github.hbmaeaddon.client.gui.slot.HBMTankSlot;
 import com.glodblock.github.hbmaeaddon.common.container.ContainerHBMFluidExposer;
 import com.glodblock.github.hbmaeaddon.common.me.HBMFluidExposer;
+import com.glodblock.github.hbmaeaddon.util.HBMUtil;
+import com.hbm.inventory.FluidStack;
+import com.hbm.inventory.fluid.Fluids;
 
 import appeng.core.localization.GuiText;
 
@@ -51,4 +56,23 @@ public class GuiHBMFluidExposer extends GuiWithSpecialSlot {
     protected ResourceLocation getBackgroundTexture() {
         return HBMAEAddon.resource("textures/guis/hbm_fluid_exposer.png");
     }
+
+    @Override
+    public boolean handleDragNDrop(GuiContainer gui, int mouseX, int mouseY, ItemStack draggedStack, int button) {
+        if (draggedStack != null) {
+            draggedStack.stackSize = 0;
+        }
+        for (var slot : this.getSpecialSlots()) {
+            if (slot instanceof HBMSlot hbmSlot && getSlotArea(slot).contains(mouseX, mouseY) && draggedStack != null) {
+                var type = HBMUtil.getFluidType(draggedStack);
+                if (type != Fluids.NONE) {
+                    var stack = new FluidStack(type, 1000);
+                    hbmSlot.setFluidStack(stack);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
