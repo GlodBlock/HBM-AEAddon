@@ -45,6 +45,14 @@ public abstract class GuiWithSpecialSlot extends AEBaseGui implements INEIGuiHan
     public void drawBG(int offsetX, int offsetY, int mouseX, int mouseY) {
         mc.getTextureManager().bindTexture(this.getBackgroundTexture());
         drawTexturedModalRect(offsetX, offsetY, 0, 0, 176, ySize);
+        GL11.glPushMatrix();
+        GL11.glTranslated(this.guiLeft, this.guiTop, 0.0F);
+        GL11.glEnable(GL11.GL_DEPTH_TEST);
+        for (var slot : this.getSpecialSlots()) {
+            this.drawSpecialSlot(slot, mouseX, mouseY, 0);
+        }
+        GL11.glDisable(GL11.GL_DEPTH_TEST);
+        GL11.glPopMatrix();
     }
 
     @Override
@@ -52,11 +60,6 @@ public abstract class GuiWithSpecialSlot extends AEBaseGui implements INEIGuiHan
         super.drawScreen(mouseX, mouseY, partialTicks);
         GL11.glPushMatrix();
         GL11.glTranslated(this.guiLeft, this.guiTop, 0.0F);
-        GL11.glEnable(GL11.GL_DEPTH_TEST);
-        for (var slot : this.getSpecialSlots()) {
-            this.drawSpecialSlot(slot, mouseX, mouseY, partialTicks);
-        }
-        GL11.glDisable(GL11.GL_DEPTH_TEST);
         for (var slot : this.getSpecialSlots()) {
             this.handleTooltip(mouseX - this.guiLeft, mouseY - this.guiTop, slot);
         }
@@ -88,12 +91,11 @@ public abstract class GuiWithSpecialSlot extends AEBaseGui implements INEIGuiHan
             slot.drawContent(this.mc, mouseX, mouseY, partialTicks);
             if (this.isMouseOverRect(left, top, slot.getWidth(), slot.getHeight(), mouseX, mouseY)
                     && slot.canClick(this.mc.thePlayer)) {
-                GL11.glDisable(GL11.GL_LIGHTING);
+                GL11.glEnable(GL11.GL_BLEND);
                 GL11.glDisable(GL11.GL_DEPTH_TEST);
                 GL11.glColorMask(true, true, true, false);
                 this.drawGradientRect(left, top, right, bottom, -2130706433, -2130706433);
                 GL11.glColorMask(true, true, true, true);
-                GL11.glEnable(GL11.GL_LIGHTING);
                 GL11.glEnable(GL11.GL_DEPTH_TEST);
             }
         }
