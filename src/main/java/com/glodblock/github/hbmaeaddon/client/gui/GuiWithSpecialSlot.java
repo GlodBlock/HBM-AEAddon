@@ -15,6 +15,7 @@ import org.lwjgl.opengl.GL11;
 import com.glodblock.github.hbmaeaddon.client.gui.slot.SpecialSlot;
 
 import appeng.client.gui.AEBaseGui;
+import appeng.client.gui.widgets.ITooltip;
 import codechicken.nei.VisiblityData;
 import codechicken.nei.api.INEIGuiHandler;
 import codechicken.nei.api.TaggedInventoryArea;
@@ -59,11 +60,27 @@ public abstract class GuiWithSpecialSlot extends AEBaseGui implements INEIGuiHan
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         super.drawScreen(mouseX, mouseY, partialTicks);
         GL11.glPushMatrix();
-        GL11.glTranslated(this.guiLeft, this.guiTop, 0.0F);
         for (var slot : this.getSpecialSlots()) {
-            this.handleTooltip(mouseX - this.guiLeft, mouseY - this.guiTop, slot);
+            this.handleSlotTooltip(mouseX - this.guiLeft, mouseY - this.guiTop, slot);
         }
         GL11.glPopMatrix();
+    }
+
+    protected void handleSlotTooltip(int mouseX, int mouseY, ITooltip tooltip) {
+        final int x = tooltip.xPos();
+        int y = tooltip.yPos();
+
+        if (x < mouseX && x + tooltip.getWidth() > mouseX && tooltip.isVisible()) {
+            if (y < mouseY && y + tooltip.getHeight() > mouseY) {
+                if (y < 15) {
+                    y = 15;
+                }
+                final String msg = tooltip.getMessage();
+                if (msg != null && !msg.isEmpty()) {
+                    this.drawTooltip(this.guiLeft + x + 11, this.guiTop + y + 4, 0, msg);
+                }
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
