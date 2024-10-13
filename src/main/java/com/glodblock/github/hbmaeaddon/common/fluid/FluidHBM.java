@@ -10,7 +10,6 @@ import com.glodblock.github.hbmaeaddon.client.icon.IconFluidHBM;
 import com.glodblock.github.hbmaeaddon.util.HBMFluidBridge;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
-import com.hbm.inventory.fluid.trait.FluidTraitSimple;
 
 public class FluidHBM extends Fluid {
 
@@ -37,7 +36,6 @@ public class FluidHBM extends Fluid {
         super(hbmFluid.getName());
         this.type = hbmFluid;
         this.unlocalizedName = hbmFluid.getUnlocalizedName();
-        this.setGaseous(hbmFluid.hasTrait(FluidTraitSimple.FT_Gaseous.class));
         this.setTemperature(hbmFluid.temperature + 273);
     }
 
