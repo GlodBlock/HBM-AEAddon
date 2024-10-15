@@ -5,6 +5,7 @@
     "description": "AE Addon for HBM",
     "version": "${modVersion}",
     "mcversion": "${minecraftVersion}",
+    "logoFile": "logo.png",
     "url": "",
     "updateUrl": "",
     "authorList": ["GlodBlock"],
