@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0",
+  "package": "com.glodblock.github.hbmaeaddon.mixins.mixin",
+  "refmap": "mixins.hbmaeaddon.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinOptionalFluidSlotFakeTypeOnly"
+  ],
+  "client": [],
+  "server": []
+}
