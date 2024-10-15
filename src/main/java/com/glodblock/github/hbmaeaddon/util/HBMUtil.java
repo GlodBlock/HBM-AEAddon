@@ -7,8 +7,8 @@ import com.hbm.inventory.FluidContainerRegistry;
 import com.hbm.inventory.FluidStack;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
+import com.hbm.items.machine.IItemFluidIdentifier;
 import com.hbm.items.machine.ItemFluidIcon;
-import com.hbm.items.machine.ItemFluidIdentifier;
 import com.hbm.items.machine.ItemInfiniteFluid;
 
 import api.hbm.fluid.IFillableItem;
@@ -71,8 +71,8 @@ public class HBMUtil {
                 return handler.getFirstFluidType(stack);
             } else if (item instanceof ItemInfiniteFluid handler) {
                 return handler.getType();
-            } else if (item instanceof ItemFluidIdentifier) {
-                return ItemFluidIdentifier.getType(stack);
+            } else if (item instanceof IItemFluidIdentifier id) {
+                return id.getType(null, 0, 0, 0, stack);
             } else if (item instanceof ItemFluidIcon) {
                 return Fluids.fromID(stack.getItemDamage());
             } else {
