@@ -154,7 +154,7 @@ public class HBMFluidExposer
 
     @Override
     public TickingRequest getTickingRequest(IGridNode node) {
-        return new TickingRequest(1, TickRates.Interface.getMax(), !this.hasWorkToDo(), true);
+        return new TickingRequest(1, 5, !this.hasWorkToDo(), true);
     }
 
     @Override
