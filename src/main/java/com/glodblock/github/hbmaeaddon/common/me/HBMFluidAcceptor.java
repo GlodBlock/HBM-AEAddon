@@ -47,7 +47,7 @@ public class HBMFluidAcceptor implements IFluidStandardReceiver {
         var te = Compat.getTileStandard(world, x, y, z);
         if (te instanceof TileEntityPipeBaseNT con) {
             var pipeType = con.getType();
-            if (!con.getPipeNet(pipeType).isSubscribed((IFluidConnector) this.iHost.getTileEntity()))
+            if (con.getPipeNet(pipeType) != null && !con.getPipeNet(pipeType).isSubscribed((IFluidConnector) this.iHost.getTileEntity()))
                 con.getPipeNet(pipeType).subscribe((IFluidConnector) this.iHost.getTileEntity());
         }
     }
