@@ -63,6 +63,7 @@ public class TileHBMFluidExposer extends AENetworkTile
     @Override
     public void onReady() {
         this.getProxy().setValidSides(EnumSet.complementOf(EnumSet.of(ForgeDirection.UNKNOWN)));
+        this.isLoaded = true;
         super.onReady();
     }
 

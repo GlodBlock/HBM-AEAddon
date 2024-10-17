@@ -1,5 +1,7 @@
 package com.glodblock.github.hbmaeaddon.common.me;
 
+import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.glodblock.github.hbmaeaddon.api.IHBMFluidAcceptorHost;
@@ -7,7 +9,10 @@ import com.glodblock.github.hbmaeaddon.util.HBMFluidBridge;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.inventory.fluid.tank.FluidTank;
+import com.hbm.tileentity.network.TileEntityPipeBaseNT;
+import com.hbm.util.Compat;
 
+import api.hbm.fluid.IFluidConnector;
 import api.hbm.fluid.IFluidStandardReceiver;
 import appeng.api.config.Actionable;
 import appeng.api.networking.GridFlags;
@@ -31,6 +36,20 @@ public class HBMFluidAcceptor implements IFluidStandardReceiver {
         this.gridProxy.setFlags(GridFlags.REQUIRE_CHANNEL);
         this.iHost = ih;
         this.mySource = new MachineSource(this.iHost);
+    }
+
+    public void subscribe() {
+        this.subscribeToAllAround(Fluids.NONE, this.iHost.getTileEntity());
+    }
+
+    @Override
+    public void trySubscribe(FluidType type, World world, int x, int y, int z, ForgeDirection dir) {
+        var te = Compat.getTileStandard(world, x, y, z);
+        if (te instanceof TileEntityPipeBaseNT con) {
+            var pipeType = con.getType();
+            if (!con.getPipeNet(pipeType).isSubscribed((IFluidConnector) this.iHost.getTileEntity()))
+                con.getPipeNet(pipeType).subscribe((IFluidConnector) this.iHost.getTileEntity());
+        }
     }
 
     @Override
