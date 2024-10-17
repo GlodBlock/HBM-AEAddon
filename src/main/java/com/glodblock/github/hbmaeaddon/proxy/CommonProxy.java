@@ -4,6 +4,7 @@ import com.glodblock.github.hbmaeaddon.HBMAEAddon;
 import com.glodblock.github.hbmaeaddon.common.BlockAndItems;
 import com.glodblock.github.hbmaeaddon.common.Recipes;
 import com.glodblock.github.hbmaeaddon.common.RegistryHandler;
+import com.glodblock.github.hbmaeaddon.network.Guis;
 import com.glodblock.github.hbmaeaddon.network.Packets;
 import com.glodblock.github.hbmaeaddon.network.gui.HBMGuiHandler;
 import com.glodblock.github.hbmaeaddon.util.HBMFluidBridge;
@@ -20,6 +21,7 @@ public class CommonProxy {
     public final FCNetworkWrapper netHandler = new FCNetworkWrapper(HBMAEAddon.MODID);
 
     public void preInit(FMLPreInitializationEvent event) {
+        Guis.ensureLoad();
         Packets.init();
         BlockAndItems.init(RegistryHandler.INSTANCE);
         RegistryHandler.INSTANCE.register();

@@ -17,7 +17,7 @@ public class HBMLatePlugin implements ILateMixinLoader {
 
     @Override
     public List<String> getMixins(Set<String> loadedMods) {
-        return Lists.newArrayList("MixinDefaultExtractorLoader", "MixinOptionalFluidSlotFakeTypeOnly");
+        return Lists.newArrayList("MixinDefaultExtractorLoader", "MixinOptionalFluidSlotFakeTypeOnly", "MixinStackInfo");
     }
 
 }

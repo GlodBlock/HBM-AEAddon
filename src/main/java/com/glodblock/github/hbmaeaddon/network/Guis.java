@@ -9,6 +9,10 @@ import com.glodblock.github.hbmaeaddon.network.gui.GuiCreator;
 
 public class Guis {
 
+    public static void ensureLoad() {
+        // NO-OP
+    }
+
     public static final GuiCreator<IHBMFluidExposerHost> HBM_EXPOSER = new GuiCreator<>(IHBMFluidExposerHost.class) {
 
         @Override
