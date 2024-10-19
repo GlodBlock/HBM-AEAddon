@@ -22,9 +22,6 @@ public class HBMLatePlugin implements ILateMixinLoader {
                 "MixinOptionalFluidSlotFakeTypeOnly",
                 "MixinStackInfo",
                 "MixinFluidRecipe");
-        if (loadedMods.contains("neenergistics")) {
-            list.add("MixinNEECraftingHelper");
-        }
         return list;
     }
 
