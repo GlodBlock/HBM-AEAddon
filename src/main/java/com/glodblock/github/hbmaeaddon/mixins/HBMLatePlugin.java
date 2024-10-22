@@ -21,7 +21,7 @@ public class HBMLatePlugin implements ILateMixinLoader {
                 "MixinDefaultExtractorLoader",
                 "MixinOptionalFluidSlotFakeTypeOnly",
                 "MixinStackInfo",
-                "MixinFluidRecipe");
+                "MixinFluidRecipe", "MixinRedstoneFlux");
         return list;
     }
 

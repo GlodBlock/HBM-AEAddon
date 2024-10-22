@@ -8,8 +8,8 @@
   "mixins": [
     "MixinDefaultExtractorLoader",
     "MixinFluidRecipe",
-    "MixinNEECraftingHelper",
     "MixinOptionalFluidSlotFakeTypeOnly",
+    "MixinRedstoneFlux",
     "MixinStackInfo"
   ],
   "client": [],

@@ -89,4 +89,12 @@ public class HBMUtil {
         return Fluids.NONE;
     }
 
+    public static long asHE(double aeUnit) {
+        return (long) (aeUnit * 10);
+    }
+
+    public static long asAE(long heUnit) {
+        return heUnit / 10;
+    }
+
 }
