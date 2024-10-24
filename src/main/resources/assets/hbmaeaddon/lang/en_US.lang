@@ -1,7 +1,11 @@
 itemGroup.hbmaeaddon=HBM-AEAddon
 
+fluid.liquid_he_unit=HE Unit
+
 tile.hbmaeaddon.hbm_fluid_exposer.name=ME HBM-Fluid Export
 tile.hbmaeaddon.hbm_fluid_acceptor.name=ME HBM-Fluid Import
+tile.hbmaeaddon.energy_liquefier.name=ME HE Liquefier
+tile.hbmaeaddon.energy_export.name=ME HE Export
 
 gui.hbmaeaddon.hbm_fluid_exposer=ME HBM-Fluid Export Port
 gui.hbmaeaddon.stored_fluid=Stored Fluid

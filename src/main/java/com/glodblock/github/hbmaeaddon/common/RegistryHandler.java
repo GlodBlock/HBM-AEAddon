@@ -3,6 +3,7 @@ package com.glodblock.github.hbmaeaddon.common;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.glodblock.github.hbmaeaddon.common.fluid.FluidHE;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
@@ -49,6 +50,7 @@ public class RegistryHandler {
         this.items.forEach(p -> p.getKey().setCreativeTab(Tabs.MAIN));
         this.blocks.forEach(p -> p.getKey().setCreativeTab(Tabs.MAIN));
         FluidHBM.init();
+        FluidHE.init();
     }
 
 }

@@ -19,7 +19,7 @@ public abstract class MixinRedstoneFlux extends AERootPoweredTile implements IEn
 
     @Override
     public long getPower() {
-        return HBMUtil.asHE(this.getAECurrentPower());
+        return 0;
     }
 
     @Override
@@ -38,7 +38,7 @@ public abstract class MixinRedstoneFlux extends AERootPoweredTile implements IEn
 
     @Override
     public long getMaxPower() {
-        return HBMUtil.asHE(this.getAEMaxPower());
+        return HBMUtil.asHE(this.getFunnelPowerDemand(Integer.MAX_VALUE));
     }
 
     @Override
