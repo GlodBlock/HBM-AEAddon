@@ -1,5 +1,12 @@
 package com.glodblock.github.hbmaeaddon.common.tile;
 
+import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidStack;
+
+import com.glodblock.github.hbmaeaddon.common.fluid.FluidHE;
+import com.hbm.util.Compat;
+
 import api.hbm.energymk2.IEnergyConductorMK2;
 import api.hbm.energymk2.IEnergyProviderMK2;
 import api.hbm.energymk2.IEnergyReceiverMK2;
@@ -18,11 +25,6 @@ import appeng.api.storage.data.IAEFluidStack;
 import appeng.me.GridAccessException;
 import appeng.tile.grid.AENetworkTile;
 import appeng.util.item.AEFluidStack;
-import com.glodblock.github.hbmaeaddon.common.fluid.FluidHE;
-import com.hbm.util.Compat;
-import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
-import net.minecraftforge.fluids.FluidStack;
 
 public class TileHEExport extends AENetworkTile implements IGridTickable, IEnergyProviderMK2 {
 
@@ -144,7 +146,12 @@ public class TileHEExport extends AENetworkTile implements IGridTickable, IEnerg
     @Override
     public TickRateModulation tickingRequest(IGridNode node, int TicksSinceLastCall) {
         for (var dir : ForgeDirection.VALID_DIRECTIONS) {
-            this.tryProvide(this.worldObj, this.xCoord + dir.offsetX, this.yCoord + dir.offsetY, this.zCoord + dir.offsetZ, dir);
+            this.tryProvide(
+                    this.worldObj,
+                    this.xCoord + dir.offsetX,
+                    this.yCoord + dir.offsetY,
+                    this.zCoord + dir.offsetZ,
+                    dir);
         }
         return TickRateModulation.SAME;
     }

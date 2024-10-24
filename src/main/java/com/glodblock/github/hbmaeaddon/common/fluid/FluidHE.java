@@ -1,9 +1,10 @@
 package com.glodblock.github.hbmaeaddon.common.fluid;
 
-import com.glodblock.github.hbmaeaddon.client.icon.ExtraIcons;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+
+import com.glodblock.github.hbmaeaddon.client.icon.ExtraIcons;
 
 public class FluidHE extends Fluid {
 

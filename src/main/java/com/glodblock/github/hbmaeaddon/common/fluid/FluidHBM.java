@@ -2,7 +2,6 @@ package com.glodblock.github.hbmaeaddon.common.fluid;
 
 import java.util.Locale;
 
-import com.hbm.inventory.fluid.trait.FluidTrait;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -11,6 +10,7 @@ import com.glodblock.github.hbmaeaddon.client.icon.IconFluidHBM;
 import com.glodblock.github.hbmaeaddon.util.HBMFluidBridge;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
+import com.hbm.inventory.fluid.trait.FluidTrait;
 
 public class FluidHBM extends Fluid {
 
@@ -67,7 +67,8 @@ public class FluidHBM extends Fluid {
     private void trySetGas() {
         if (!GAS_TYPE_INIT) {
             try {
-                GAS_TYPE = (Class<? extends FluidTrait>) Class.forName("com.hbm.inventory.fluid.trait.FluidTraitSimple$FT_Gaseous");
+                GAS_TYPE = (Class<? extends FluidTrait>) Class
+                        .forName("com.hbm.inventory.fluid.trait.FluidTraitSimple$FT_Gaseous");
             } catch (Exception e) {
                 try {
                     GAS_TYPE = (Class<? extends FluidTrait>) Class.forName("com.hbm.inventory.fluid.trait.FT_Gaseous");

@@ -1,8 +1,9 @@
 package com.glodblock.github.hbmaeaddon.client.icon;
 
-import com.glodblock.github.hbmaeaddon.HBMAEAddon;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.util.IIcon;
+
+import com.glodblock.github.hbmaeaddon.HBMAEAddon;
 
 public enum ExtraIcons {
 

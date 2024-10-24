@@ -1,13 +1,15 @@
 package com.glodblock.github.hbmaeaddon.common.block;
 
+import net.minecraft.block.material.Material;
+import net.minecraft.tileentity.TileEntity;
+
+import com.glodblock.github.hbmaeaddon.HBMAEAddon;
+import com.glodblock.github.hbmaeaddon.common.tile.TileHELiquefier;
+
 import appeng.block.AEBaseTileBlock;
 import appeng.core.features.ActivityState;
 import appeng.core.features.BlockStackSrc;
 import appeng.tile.AEBaseTile;
-import com.glodblock.github.hbmaeaddon.HBMAEAddon;
-import com.glodblock.github.hbmaeaddon.common.tile.TileHELiquefier;
-import net.minecraft.block.material.Material;
-import net.minecraft.tileentity.TileEntity;
 
 public class BlockHELiquefier extends AEBaseTileBlock {
 

@@ -1,15 +1,15 @@
 package com.glodblock.github.hbmaeaddon.client;
 
-import com.glodblock.github.hbmaeaddon.client.icon.ExtraIcons;
+import java.util.Arrays;
+
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
 
+import com.glodblock.github.hbmaeaddon.client.icon.ExtraIcons;
 import com.glodblock.github.hbmaeaddon.client.icon.IconFluidHBM;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-
-import java.util.Arrays;
 
 public class ClientRegistryHandler {
 

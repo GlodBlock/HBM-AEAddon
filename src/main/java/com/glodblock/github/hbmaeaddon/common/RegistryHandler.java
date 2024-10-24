@@ -3,7 +3,6 @@ package com.glodblock.github.hbmaeaddon.common;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.glodblock.github.hbmaeaddon.common.fluid.FluidHE;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
@@ -12,6 +11,7 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import com.glodblock.github.hbmaeaddon.HBMAEAddon;
 import com.glodblock.github.hbmaeaddon.common.fluid.FluidHBM;
+import com.glodblock.github.hbmaeaddon.common.fluid.FluidHE;
 import com.glodblock.github.hbmaeaddon.util.DataUtil;
 import com.glodblock.github.hbmaeaddon.util.Tabs;
 

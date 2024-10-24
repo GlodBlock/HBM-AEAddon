@@ -1,5 +1,10 @@
 package com.glodblock.github.hbmaeaddon.common.tile;
 
+import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidStack;
+
+import com.glodblock.github.hbmaeaddon.common.fluid.FluidHE;
+
 import api.hbm.energymk2.IEnergyReceiverMK2;
 import appeng.api.config.Actionable;
 import appeng.api.networking.IGridNode;
@@ -14,9 +19,6 @@ import appeng.api.storage.data.IAEFluidStack;
 import appeng.me.GridAccessException;
 import appeng.tile.grid.AENetworkTile;
 import appeng.util.item.AEFluidStack;
-import com.glodblock.github.hbmaeaddon.common.fluid.FluidHE;
-import net.minecraftforge.common.util.ForgeDirection;
-import net.minecraftforge.fluids.FluidStack;
 
 public class TileHELiquefier extends AENetworkTile implements IGridTickable, IEnergyReceiverMK2 {
 
@@ -97,7 +99,12 @@ public class TileHELiquefier extends AENetworkTile implements IGridTickable, IEn
     @Override
     public TickRateModulation tickingRequest(IGridNode node, int TicksSinceLastCall) {
         for (var dir : ForgeDirection.VALID_DIRECTIONS) {
-            this.trySubscribe(this.worldObj, this.xCoord + dir.offsetX, this.yCoord + dir.offsetY, this.zCoord + dir.offsetZ, dir);
+            this.trySubscribe(
+                    this.worldObj,
+                    this.xCoord + dir.offsetX,
+                    this.yCoord + dir.offsetY,
+                    this.zCoord + dir.offsetZ,
+                    dir);
         }
         return TickRateModulation.SAME;
     }
