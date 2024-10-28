@@ -1,0 +1,14 @@
+itemGroup.hbmaeaddon=HBM AEAddon
+
+// Fluids
+fluid.liquid_he_unit=HE Энергия
+
+// Tiles
+tile.hbmaeaddon.hbm_fluid_exposer.name=МЭ Жидкостный экспортер - HBM
+tile.hbmaeaddon.hbm_fluid_acceptor.name=МЭ Жидкостный импортер - HBM
+tile.hbmaeaddon.energy_liquefier.name=МЭ Энергетический импортер - HBM
+tile.hbmaeaddon.energy_export.name=МЭ Энергетический экспортер - HBM
+
+// GUI
+gui.hbmaeaddon.hbm_fluid_exposer=МЭ Жидкостный экспортер - HBM
+gui.hbmaeaddon.stored_fluid=Хранимой жидкости
