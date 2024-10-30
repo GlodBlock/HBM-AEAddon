@@ -8,17 +8,17 @@ import com.glodblock.github.hbmaeaddon.network.Guis;
 import com.glodblock.github.hbmaeaddon.network.Packets;
 import com.glodblock.github.hbmaeaddon.network.gui.HBMGuiHandler;
 import com.glodblock.github.hbmaeaddon.util.HBMFluidBridge;
-import com.glodblock.github.network.wrapper.FCNetworkWrapper;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
 public class CommonProxy {
 
-    public final FCNetworkWrapper netHandler = new FCNetworkWrapper(HBMAEAddon.MODID);
+    public final SimpleNetworkWrapper netHandler = new SimpleNetworkWrapper(HBMAEAddon.MODID);
 
     public void preInit(FMLPreInitializationEvent event) {
         Guis.ensureLoad();
