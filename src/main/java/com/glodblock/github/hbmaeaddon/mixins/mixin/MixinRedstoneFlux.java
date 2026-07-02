@@ -21,11 +21,6 @@ public abstract class MixinRedstoneFlux extends AERootPoweredTile implements IEn
     private boolean isLoaded = true;
 
     @Override
-    public long getPower() {
-        return 0;
-    }
-
-    @Override
     public void setPower(long l) {
         this.setInternalCurrentPower(HBMUtil.asAE(l));
     }
